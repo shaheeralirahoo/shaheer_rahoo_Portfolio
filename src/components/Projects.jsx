@@ -143,20 +143,6 @@ export default function Projects() {
             ]
         },
         {
-            title: "Wing App",
-            period: "2024",
-            company: "LaunchBox Pakistan",
-            description:
-                "Dating + social networking app with real-time chat, profile matching, and scalable backend architecture.",
-            skills: ["Node.js", "Firebase", "Agora"],
-            links: [
-                {
-                    name: "Google Play Store",
-                    url: "https://play.google.com/store/apps/details?id=com.dignitestudios.wingapp&pli=1"
-                }
-            ]
-        },
-        {
             title: "Fitness by Faith",
             period: "2023",
             company: "LaunchBox Pakistan",
@@ -178,7 +164,7 @@ export default function Projects() {
             description:
                 "Social dating app with unique 'wing' feature allowing users to recommend profiles to friends, enhancing trust-based connections.",
             skills: ["Node.js", "Firebase", "React Native"],
-            links: [{ name: "Google Play Store", url: "#" }]
+            links: [{ name: "Google Play Store", url: "https://play.google.com/store/apps/details?id=com.dignitestudios.wingapp&pli=1" }]
         },
 
     ];
