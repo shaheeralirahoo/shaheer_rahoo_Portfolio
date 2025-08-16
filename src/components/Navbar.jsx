@@ -2,7 +2,7 @@ import { useState } from "react";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const links = ["Hero", "Skills", "Experience", "Projects", "Education", "Contact"];
+  const links = ["Skills", "Experience", "Projects", "Education", "Contact"];
 
   return (
     <nav className="bg-gray-50 sticky top-0 z-50 shadow-md">
