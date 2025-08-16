@@ -92,11 +92,11 @@ export default function Projects() {
                 "SendGrid",
                 "Node.js"
             ],
-            links: [
-                { name: "LeaderBoard", url: "#" },
-                { name: "Home Screen", url: "#" },
-                { name: "Answer Screen", url: "#" }
-            ]
+            // links: [
+            //     { name: "LeaderBoard", url: "#" },
+            //     { name: "Home Screen", url: "#" },
+            //     { name: "Answer Screen", url: "#" }
+            // ]
         },
         {
             title: "Sweep Stake",
@@ -114,7 +114,7 @@ export default function Projects() {
                 "AngularJS",
                 "Node.js"
             ],
-            links: [{ name: "Marketing Website", url: "#" }]
+            // links: [{ name: "Marketing Website", url: "#" }]
         },
         {
             title: "Kacheri Law",
@@ -199,7 +199,7 @@ export default function Projects() {
                             ))}
                         </div>
                         <div className="flex gap-4 flex-wrap">
-                            {proj.links.map((link, i) => (
+                            {proj?.links?.map((link, i) => (
                                 <a key={i} href={link.url} target="_blank" rel="noopener noreferrer" className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
                                     {link.name}
                                 </a>
