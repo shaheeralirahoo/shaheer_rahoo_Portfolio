@@ -76,7 +76,7 @@ export default function Projects() {
                 }
             ]
         },
-                {
+        {
             title: "Scavenger Hunt",
             period: "Jan 2024 - Feb 2024",
             company: "Indus Valley Technologies",
@@ -173,20 +173,44 @@ export default function Projects() {
     return (
         <section id="projects" className="py-16 bg-gray-100 text-gray-900 px-6">
             <h2 className="text-4xl font-bold text-center mb-12">Projects</h2>
-            <div className="flex flex-col gap-6 max-w-5xl mx-auto">
+
+            <div className="flex flex-col gap-8 max-w-5xl mx-auto">
                 {projects.map((proj, idx) => (
-                    <div key={idx} className="bg-white rounded-xl shadow-lg p-6 hover:scale-105 transform transition duration-300">
-                        <h3 className="text-2xl font-semibold mb-2">{proj.title}</h3>
-                        <p className="text-gray-500 text-sm mb-2">{proj.company} | {proj.period}</p>
-                        <p className="text-gray-700 mb-4">{proj.description}</p>
-                        <div className="flex flex-wrap gap-2 mb-4">
+                    <div
+                        key={idx}
+                        className="bg-white rounded-xl shadow-lg p-8 border-l-4 border-blue-500 hover:shadow-xl transition duration-300"
+                    >
+                        {/* Title & Company */}
+                        <h3 className="text-2xl font-bold text-gray-800">{proj.title}</h3>
+                        <p className="text-gray-500 text-sm mb-4">
+                            {proj.company} · {proj.period}
+                        </p>
+
+                        {/* Description */}
+                        <p className="text-gray-700 mb-6">{proj.description}</p>
+
+                        {/* Skills */}
+                        <div className="flex flex-wrap gap-2 mb-6">
                             {proj.skills.map((skill, i) => (
-                                <span key={i} className="text-xs bg-gray-200 px-2 py-1 rounded">{skill}</span>
+                                <span
+                                    key={i}
+                                    className="text-xs font-medium bg-gray-200 px-3 py-1 rounded-full"
+                                >
+                                    {skill}
+                                </span>
                             ))}
                         </div>
+
+                        {/* Links */}
                         <div className="flex gap-4 flex-wrap">
                             {proj?.links?.map((link, i) => (
-                                <a key={i} href={link.url} target="_blank" rel="noopener noreferrer" className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
+                                <a
+                                    key={i}
+                                    href={link.url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition"
+                                >
                                     {link.name}
                                 </a>
                             ))}
@@ -196,4 +220,6 @@ export default function Projects() {
             </div>
         </section>
     );
+
+
 }

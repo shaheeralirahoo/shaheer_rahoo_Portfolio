@@ -29,17 +29,32 @@ export default function Experience() {
     ];
 
     return (
-        <section id="experience" className="p-12 bg-gray-50 text-gray-900">
-            <h2 className="text-4xl font-bold mb-8 text-center text-gray-800">Experience</h2>
-            <div className="flex flex-col gap-6 max-w-5xl mx-auto">
-                {experiences.map((exp, i) => (
-                    <div key={i} className="bg-white p-6 rounded-lg shadow-md hover:scale-105 hover:shadow-lg transition-transform duration-300">
-                        <h3 className="text-2xl font-semibold">{exp.role}</h3>
-                        <p className="text-gray-500">{exp.company} · {exp.period}</p>
-                        <p className="mt-2 text-gray-700">{exp.details}</p>
-                    </div>
-                ))}
+        <section id="experience" className="p-16 bg-gradient-to-b from-purple-50 via-white to-blue-50 text-gray-900">
+            <h2 className="text-4xl font-extrabold mb-12 text-center bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+                Experience
+            </h2>
+
+            <div className="relative max-w-5xl mx-auto">
+                {/* Vertical timeline line */}
+                <div className="absolute left-4 top-0 bottom-0 w-1 bg-gradient-to-b from-purple-500 to-blue-500 rounded-full"></div>
+
+                <div className="flex flex-col gap-10 pl-12">
+                    {experiences.map((exp, i) => (
+                        <div
+                            key={i}
+                            className="relative bg-white p-6 rounded-xl shadow-md hover:shadow-xl hover:scale-[1.02] transition-all duration-300"
+                        >
+                            {/* Circle marker */}
+                            <div className="absolute -left-7 top-6 w-5 h-5 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 shadow-lg"></div>
+
+                            <h3 className="text-2xl font-semibold text-gray-800">{exp.role}</h3>
+                            <p className="text-gray-500">{exp.company} · {exp.period}</p>
+                            <p className="mt-3 text-gray-700 leading-relaxed">{exp.details}</p>
+                        </div>
+                    ))}
+                </div>
             </div>
         </section>
     );
+
 }
