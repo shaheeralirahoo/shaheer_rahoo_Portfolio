@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 export default function Navbar() {
-const [menuOpen, setMenuOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const links = ["About", "Education", "Experience", "Projects", "Contact"];
 
   return (
@@ -11,6 +11,7 @@ const [menuOpen, setMenuOpen] = useState(false);
           Shaheer Ali
         </div>
 
+        {/* Desktop Links */}
         <ul className="hidden md:flex gap-6 text-gray-700 font-medium">
           {links.map((link) => (
             <li key={link}>
@@ -24,30 +25,31 @@ const [menuOpen, setMenuOpen] = useState(false);
           ))}
         </ul>
 
+        {/* Mobile Menu Button */}
         <div className="md:hidden">
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="text-gray-700 text-2xl"
+            className="text-gray-700 text-2xl focus:outline-none"
           >
             {menuOpen ? "✕" : "☰"}
           </button>
         </div>
       </div>
 
+      {/* Mobile Menu Overlay */}
       {menuOpen && (
-        <ul className="flex flex-col gap-4 p-6 bg-gray-50 border-t border-gray-200 md:hidden">
+        <div className="md:hidden fixed inset-0 bg-gray-50 bg-opacity-95 flex flex-col items-center justify-center gap-6 z-40">
           {links.map((link) => (
-            <li key={link}>
-              <a
-                href={`#${link.toLowerCase()}`}
-                onClick={() => setMenuOpen(false)}
-                className="block text-gray-700 hover:text-purple-600 transition"
-              >
-                {link}
-              </a>
-            </li>
+            <a
+              key={link}
+              href={`#${link.toLowerCase()}`}
+              onClick={() => setMenuOpen(false)}
+              className="text-2xl font-medium text-gray-700 hover:text-purple-600 transition"
+            >
+              {link}
+            </a>
           ))}
-        </ul>
+        </div>
       )}
     </nav>
   );
