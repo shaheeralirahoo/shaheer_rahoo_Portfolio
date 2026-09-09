@@ -4,6 +4,8 @@ Describes the UI architecture, component hierarchy, layout system, and design pa
 
 ---
 
+
+
 ## Page Layout
 
 The site is a single scrollable page with dedicated project case-study pages. Layout order:
