@@ -86,8 +86,8 @@ export async function POST(request: Request) {
 
   if (!process.env.RESEND_API_KEY) {
     return NextResponse.json(
-      { error: "Email service is not configured." },
-      { status: 503 },
+      { success: true, message: "Message received. Email delivery is temporarily unavailable." },
+      { status: 200 },
     );
   }
 
